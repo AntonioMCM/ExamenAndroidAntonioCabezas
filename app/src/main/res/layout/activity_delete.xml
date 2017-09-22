@@ -6,4 +6,64 @@
     android:layout_height="match_parent"
     tools:context="com.example.antoniocabezas.mortalcontact.DeleteActivity">
 
+    <EditText
+        android:id="@+id/dtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/dtNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:hint="Number"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/dtName"
+        android:layout_alignLeft="@+id/dtName"
+        android:layout_alignStart="@+id/dtName" />
+
+    <EditText
+        android:id="@+id/dtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/dtNumber"
+        android:layout_alignLeft="@+id/dtNumber"
+        android:layout_alignStart="@+id/dtNumber" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dtEmail"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/dtEmail"
+        android:layout_marginBottom="38dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:text="DELETE" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnDelete"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_toEndOf="@+id/btnDelete"
+        android:layout_toRightOf="@+id/btnDelete"
+        android:text="CANCEL" />
 </RelativeLayout>

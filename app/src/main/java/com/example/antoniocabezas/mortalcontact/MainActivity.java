@@ -58,15 +58,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(ADDCONTACT==requestCode) {
-            if(resultCode == Activity.RESULT_OK) {
+        if (ADDCONTACT == requestCode) {
+            if (resultCode == Activity.RESULT_OK) {
                 if (data.hasExtra("contact")) {
-                 contactList.add((Contact)data.getParcelableExtra("contact"));
+                    contactList.add((Contact) data.getParcelableExtra("contact"));
                     TextView tvContactList = (TextView)findViewById(R.id.tvContactList);
                     String list = "";
-                    for(Contact aux: contactList) {
-                        list=list+aux.toString()+"; ";
-                        tvContactList.setText("Contactos: "+list);
+                    for (Contact aux : contactList) {
+                        list = list + aux.toString() + "; ";
+                        tvContactList.setText("Contactos: " + list);
+                    }
+                }
+            }
+        }
+        if (DELETECONTACT == requestCode) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (data.hasExtra("contact")) {
+                    contactList.remove(data.getParcelableExtra("contact"));
+                    TextView tvContactList = (TextView)findViewById(R.id.tvContactList);
+                    String list = "";
+                    for (Contact aux : contactList) {
+                        list = list + aux.toString() + "; ";
+                        tvContactList.setText("Contactos: " + list);
                     }
                 }
             }
