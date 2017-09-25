@@ -5,11 +5,22 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListActivity extends AppCompatActivity implements View.OnClickListener{
 
     private AlertDialog dialog;
+
+    private ListView showList;
+    private ArrayList<Contact> contactList = new ArrayList<>();
+    private ArrayAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +29,24 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnBack2 = (Button)findViewById(R.id.btnBack2);
         btnBack2.setOnClickListener(this);
+
+        showList = (ListView)findViewById(R.id.contactList);
+        contactList =  getIntent().getParcelableArrayListExtra("contactList");
+        List<String> aux=crearAdapter(contactList);
+
+        adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,aux);
+        showList.setAdapter(adapter);
+
+    }
+
+    private List<String> crearAdapter(ArrayList<Contact> contactList) {
+        List<String>aux=new ArrayList<>();
+        for(Contact c:contactList){
+
+            aux.add(c.getName()+", "+c.getNumber()+", "+c.getEmail());
+
+        }
+        return aux;
     }
 
     private AlertDialog Back2Dialog() {

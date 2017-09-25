@@ -2,6 +2,7 @@ package com.example.antoniocabezas.mortalcontact;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,14 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final Integer ADDCONTACT=100;
     public static final Integer DELETECONTACT=200;
-    public static final Integer LISTCONTACT=300;
-    private List<Contact> contactList = new ArrayList<>();
+    // public static final Integer LISTCONTACT=300;
+    private ArrayList<Parcelable> contactList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 c=DeleteActivity.class;
                 break;
             case R.id.btnList:
-                intentId = LISTCONTACT;
-                c=ListActivity.class;
-                break;
+                Intent intentL = new Intent (this, ListActivity.class);
+                intentL.putParcelableArrayListExtra("contactList", contactList);
+                startActivity(intentL);
+                return;
         }
         intent = new Intent (this, c);
         startActivityForResult(intent, intentId);
@@ -61,13 +62,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (ADDCONTACT == requestCode) {
             if (resultCode == Activity.RESULT_OK) {
                 if (data.hasExtra("contact")) {
-                    contactList.add((Contact) data.getParcelableExtra("contact"));
-                    TextView tvContactList = (TextView)findViewById(R.id.tvContactList);
+                    contactList.add(data.getParcelableExtra("contact"));
+/*                    TextView tvContactList = (TextView)findViewById(R.id.tvContactList);
                     String list = "";
-                    for (Contact aux : contactList) {
+                    for (Parcelable aux : contactList) {
                         list = list + aux.toString() + "; ";
                         tvContactList.setText("Contactos: " + list);
-                    }
+                    }*/
                 }
             }
         }
@@ -75,15 +76,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (resultCode == Activity.RESULT_OK) {
                 if (data.hasExtra("contact")) {
                     contactList.remove(data.getParcelableExtra("contact"));
-                    TextView tvContactList = (TextView)findViewById(R.id.tvContactList);
+/*                    TextView tvContactList = (TextView)findViewById(R.id.tvContactList);
                     String list = "";
-                    for (Contact aux : contactList) {
+                    for (Parcelable aux : contactList) {
                         list = list + aux.toString() + "; ";
                         tvContactList.setText("Contactos: " + list);
-                    }
+                    }*/
                 }
             }
         }
-
     }
 }
