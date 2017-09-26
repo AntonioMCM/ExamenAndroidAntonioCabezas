@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.antoniocabezas.mortalcontact.ListActivity">
+    tools:context="com.example.antoniocabezas.examenandroidamcm.ListActivity">
+
+    <Button
+        android:id="@+id/btnEditContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_below="@+id/contactList"
+        android:layout_alignLeft="@+id/contactList"
+        android:layout_alignStart="@+id/contactList" />
 
     <ListView
         android:id="@+id/contactList"
@@ -18,8 +29,12 @@
         android:id="@+id/btnBack2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="22dp"
         android:text="BACK"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/contactList"
+        android:layout_alignEnd="@+id/contactList"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp" />
+
 </RelativeLayout>

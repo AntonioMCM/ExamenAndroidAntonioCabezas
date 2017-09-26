@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.antoniocabezas.mortalcontact.MainActivity">
+    tools:context="com.example.antoniocabezas.examenandroidamcm.MainActivity">
 
     <Button
         android:id="@+id/btnAdd"
@@ -38,7 +38,7 @@
         android:layout_marginTop="25dp"
         android:text="List" />
 
-<!--    <TextView
+        <TextView
         android:id="@+id/tvContactList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,5 +48,5 @@
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="45dp"
-        android:text="ContactList" />-->
+        android:text="ContactList" />
 </RelativeLayout>

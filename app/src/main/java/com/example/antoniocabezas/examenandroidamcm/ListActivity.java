@@ -1,4 +1,4 @@
-package com.example.antoniocabezas.mortalcontact;
+package com.example.antoniocabezas.examenandroidamcm;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -9,13 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private AlertDialog dialog;
+    private AlertDialog backDialog;
+    private AlertDialog editDialog;
 
     private ListView showList;
     private ArrayList<Contact> contactList = new ArrayList<>();
@@ -29,6 +29,9 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnBack2 = (Button)findViewById(R.id.btnBack2);
         btnBack2.setOnClickListener(this);
+
+        Button btnEdit = (Button)findViewById(R.id.btnEditContact);
+        btnEdit.setOnClickListener(this);
 
         showList = (ListView)findViewById(R.id.contactList);
         contactList =  getIntent().getParcelableArrayListExtra("contactList");
@@ -67,11 +70,39 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         return text.create();
     }
 
+    private AlertDialog EditDialog() {
+        AlertDialog.Builder edit = new AlertDialog.Builder(this);
+        edit.setMessage("DO YOU WANT TO EDIT OR DELETE A CONTACT?");
+        edit.setPositiveButton("EDIT", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        edit.setNegativeButton("DELETE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        return edit.create();
+    }
+
     @Override
     public void onClick(View v) {
-            if (dialog == null) {
-                dialog=Back2Dialog();
-            }
-            dialog.show();
+        switch (v.getId()) {
+            case R.id.btnBack2:
+                if (backDialog == null) {
+                    backDialog = Back2Dialog();
+                }
+                backDialog.show();
+                break;
+            case R.id.btnEditContact:
+                if (editDialog == null) {
+                    editDialog = EditDialog();
+                }
+                editDialog.show();
+                break;
+        }
     }
 }

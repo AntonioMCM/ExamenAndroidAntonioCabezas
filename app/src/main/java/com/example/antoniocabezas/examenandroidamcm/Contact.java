@@ -1,4 +1,4 @@
-package com.example.antoniocabezas.mortalcontact;
+package com.example.antoniocabezas.examenandroidamcm;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,4 +1,4 @@
-package com.example.antoniocabezas.mortalcontact;
+package com.example.antoniocabezas.examenandroidamcm;
 
 import org.junit.Test;
 
