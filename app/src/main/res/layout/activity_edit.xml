@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.antoniocabezas.examenandroidamcm.EditActivity">
+
+    <EditText
+        android:id="@+id/etNewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="NewName"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/etNewNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="NewNumber"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/etNewName"
+        android:layout_alignLeft="@+id/etNewName"
+        android:layout_alignStart="@+id/etNewName"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:id="@+id/etNewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="NewEmail"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/etNewNumber"
+        android:layout_alignLeft="@+id/etNewNumber"
+        android:layout_alignStart="@+id/etNewNumber"
+        android:layout_marginTop="41dp" />
+
+    <Button
+        android:id="@+id/btnCancel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO BACK"
+        android:layout_alignBaseline="@+id/btnEditContact"
+        android:layout_alignBottom="@+id/btnEditContact"
+        android:layout_alignRight="@+id/etNewEmail"
+        android:layout_alignEnd="@+id/etNewEmail" />
+
+    <Button
+        android:id="@+id/btnEditContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDIT CONTACT"
+        android:layout_marginBottom="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/etNewEmail"
+        android:layout_alignStart="@+id/etNewEmail" />
+
+</RelativeLayout>
