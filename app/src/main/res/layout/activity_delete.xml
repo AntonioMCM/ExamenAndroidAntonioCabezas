@@ -60,10 +60,9 @@
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:layout_alignBaseline="@+id/btnDelete"
         android:layout_alignBottom="@+id/btnDelete"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_toEndOf="@+id/btnDelete"
-        android:layout_toRightOf="@+id/btnDelete"
-        android:text="CANCEL" />
+        android:layout_alignRight="@+id/dtEmail"
+        android:layout_alignEnd="@+id/dtEmail" />
 </RelativeLayout>

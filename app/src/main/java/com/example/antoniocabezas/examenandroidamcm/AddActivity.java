@@ -26,6 +26,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         btnCancel.setOnClickListener(this);
     }
 
+    // METODO QUE CREA CONTACTO NUEVO
+
     private Contact AddContact() {
 
         EditText etName = (EditText)findViewById(R.id.etName);
@@ -35,6 +37,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         Contact contact = new Contact(etName.getText().toString(), Integer.parseInt(etNumber.getText().toString()), etEmail.getText().toString());
         return contact;
     }
+
+    // METODO QUE CFEA UNA ALERTA DE DIALOGO PARA VOLVER ATRÁS
 
     private AlertDialog cancelDialog() {
         AlertDialog.Builder text=new AlertDialog.Builder(this);
@@ -62,7 +66,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 if (contact != null) {
                     Intent intent = new Intent();
                     intent.putExtra("contact", contact);
-                    setResult(Activity.RESULT_OK, intent);
+                    setResult(Activity.RESULT_OK, intent); // DEVUELVE EL NUEVO CONTACTO A LA ACTIVIDAD MAIN
                 }
                 this.finish();
                 break;

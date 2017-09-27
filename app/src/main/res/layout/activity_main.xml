@@ -38,15 +38,4 @@
         android:layout_marginTop="25dp"
         android:text="List" />
 
-        <TextView
-        android:id="@+id/tvContactList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnList"
-        android:layout_alignStart="@+id/btnList"
-        android:layout_below="@+id/btnList"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="45dp"
-        android:text="ContactList" />
 </RelativeLayout>
